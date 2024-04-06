@@ -28,7 +28,7 @@ class Generator1(nn.Module):
         self.eb1 = nn.Embedding(n_spk, s_ch)
         self.src_conditioning = src_conditioning
 
-    def __call__(self, xin, k_t, k_s=None):
+    def __call__(self, xin, k_t, k_s=None):  # k_t是目标域, k_s是源域
         device = xin.device
         B, n_mels, n_frame_ = xin.shape
 
